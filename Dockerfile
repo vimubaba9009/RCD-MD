@@ -1,10 +1,10 @@
 FROM quay.io/sampandey001/secktor
 
-RUN git clone https://github.com/DEXTER-BOTS/RCD-MD.git /root/rcd
+RUN git clone https://github.com/DEXTER-BOTS/STATUS-SENDER.git /root/status
 
 # Clear npm cache and remove node_modules directories
 RUN npm cache clean --force
-RUN rm -rf /root/rcd/node_modules
+RUN rm -rf /root/status/node_modules
 
 # Install dependencies
 WORKDIR /root/status
