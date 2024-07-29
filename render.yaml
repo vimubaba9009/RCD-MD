@@ -1,5 +1,7 @@
-jobs:
-  - type: cron
-    name: restart-bot
-    schedule: "0 */6 * * *"
-    command: "bash restart-bot.sh"
+   services:
+     - type: worker
+       name: whatsapp-bot
+       env: dockfile
+       plan: free
+       buildCommand: "npm install"
+       startCommand: "npm start"
