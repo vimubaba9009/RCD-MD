@@ -1,8 +1,8 @@
 const { cmd, Void } = require('../lib'); // Import necessary modules
 const axios = require('axios');
 
-// URL to the gist containing the mapping of words to audio URLs
-const url = 'https://gist.githubusercontent.com/purnapurna2007/c78c88f763b70239ce3fb4ef31958d1a/raw';
+// URL to the raw GitHub file containing the mapping of words to audio URLs
+const url = 'https://raw.githubusercontent.com/drsde/VOICE/main/VOICE';
 
 cmd({
     pattern: "bgmnsew",
