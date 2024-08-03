@@ -1,8 +1,8 @@
-const { tlang, cmd } = require('../lib');
+const { cmd, Void } = require('../lib'); // Import necessary modules
 const axios = require('axios');
 
-// URL with modified words and their corresponding audio URLs
-const url = 'https://gist.githubusercontent.com/purnapurna2007/c78c88f763b70239ce3fb4ef31958d1a/raw/audio_urls.json';
+// URL to the raw GitHub file containing the mapping of words to audio URLs
+const url = 'https://raw.githubusercontent.com/drsde/VOICE/main/VOICE';
 
 cmd({
     pattern: "bgmnsew",
@@ -10,19 +10,19 @@ cmd({
     use: '',
 }, async (Void, citel, text, { isCreator }) => {
     try {
-        // Fetch the data from the URL
+        // Fetch data from the provided URL
         let { data } = await axios.get(url);
         console.log('Fetched data:', data);
 
-        // Loop through the data to check if the text contains any of the words
+        // Iterate over the fetched data to check for keyword matches in the message
         for (let vr in data) {
             console.log('Checking word:', vr);
 
-            // Use regular expression to check for the word in the text
+            // Use a regular expression to find a whole word match in the incoming text
             if ((new RegExp(`\\b${vr}\\b`, 'gi')).test(citel.text)) {
                 console.log('Match found for word:', vr);
 
-                // Send audio message if a match is found
+                // Send an audio message to the chat if a match is found
                 return Void.sendMessage(citel.chat, {
                     audio: { url: data[vr] },
                     mimetype: 'audio/mpeg',
