@@ -1,23 +1,26 @@
 {
-   "name": "rcd-md",
+   "name": "RCD-MD-V1",
    "version": "2.5.0",
-   "description": "Multi device whatsapp bot by RCD ....",
+   "description": "Multi device whatsapp bot by Itxxwasi.",
    "main": "index.js",
    "type": "commonjs",
    "scripts": {
       "run": "pm2 start . --deep-monitoring --attach --name Itxxwasi || node .",
-      "Itxxwasi ": "pm2 start . --deep-monitoring --attach --name rcd || node .",
+      "asta": "pm2 start . --deep-monitoring --attach --name Itxxwasi || node .",
       "start": "pm2 start . --attach --name Itxxwasi",
-      "stop": "pm2 stop rcd",
+      "stop": "pm2 stop Itxxwasi",
       "heroku-postbuild": "git clone https://github.com/DEXTER-BOTS/RCD-MD.git temp && mv temp/.git .git && rm -rf temp && npx puppeteer@latest install  --y",
-      "fis-heroku-postbuild": "git clone https://github.com/DEXTER-BOT-1/RCD-MD.git temp1 && rsync -av temp1/* ./ && rsync -av temp1/.* ./ && rm -rf temp1 && npm i && npx puppeteer@latest install",
+      "fis-heroku-postbuild": "git clone https://github.com/DEXTER-BOTS/RCD-MD.git temp1 && rsync -av temp1/* ./ && rsync -av temp1/.* ./ && rm -rf temp1 && npm i && npx puppeteer@latest install",
       "postinstall": "npx puppeteer@latest install --y"
    },
-   "author": "RCD",
+
+"author": "Itxxwasi",
    "license": "Apache-2.0",
    "dependencies": {
-      "@adiwajshing/keyed-db": "^0.2.4",
       "@distube/ytdl-core": "^4.13.5",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@google/generative-ai": "^0.9.0",
+      "@adiwajshing/keyed-db": "^0.2.4",
       "@hapi/boom": "^9.1.4",
       "@whiskeysockets/baileys": "6.6.0",
       "acrcloud": "^1.4.0",
@@ -64,7 +67,8 @@
       "util": "^0.12.4",
       "wa-sticker-formatter": "^4.3.2",
       "youtubei.js": "^7.0.0",
-      "ytdl-core": "^4.11.5",
+      "ytdl-core": "github:franceking1/flash-dls",
+      "ytdl-secktor": "^0.0.1-development",
       "ytdl-core": "github:franceking1/flash-dls"
    },
    "directories": {
@@ -76,10 +80,10 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/DEXTER-BOTS/STATUS-SENDER.git"
+      "url": "https://github.com/DEXTER-BOTS/RCD-MD.git"
    },
    "bugs": {
-      "url": "https://github.com/DEXTER-BOT-1/RCD-MD/issues"
+      "url": "https://github.com/DEXTER-BOTS/RCD-MD/issues"
    },
-   "homepage": "https://github.com/DEXTER-BOT-1/RCD-MD"
+   "homepage": "https://github.com/DEXTER-BOTS/RCD-MD#readme"
 }
